@@ -7,6 +7,7 @@ public class Plant : MonoBehaviour
     [SerializeField] private float maxSize;
     [SerializeField] private float growthSpeed;
     [SerializeField] private IntVariable _water;
+    [SerializeField] private IntVariable _plantGrown;
 
     private bool isGrown;
 
@@ -38,6 +39,7 @@ public class Plant : MonoBehaviour
         {
             isGrown = true;
             _water.Value -= 10;
+            _plantGrown.Value ++;
             Debug.Log("La plante pousse. Il reste " + _water.Value + " mesures d'eau.");
         }
     }

@@ -113,3 +113,4 @@ MonoBehaviour:
   maxSize: 10
   growthSpeed: 4
   _water: {fileID: 11400000, guid: d06b1066c66105a429dfb9317cf5bc69, type: 2}
+  _plantGrown: {fileID: 11400000, guid: 8330bd27688f67f46b628886d562f367, type: 2}

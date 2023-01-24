@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -14,9 +15,10 @@ public class Spawner : MonoBehaviour
     [Space(10)]
     [SerializeField] float _zMin;
     [SerializeField] float _zMax;
-
+    
     private GameObject _ground;
     private float _timer;
+    
 
     void Start()
     {
