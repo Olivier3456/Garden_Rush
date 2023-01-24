@@ -35,7 +35,7 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && _water.Value >= 10)
+        if (other.CompareTag("Player") && _water.Value >= 10 && !isGrown)
         {
             isGrown = true;
             _water.Value -= 10;
