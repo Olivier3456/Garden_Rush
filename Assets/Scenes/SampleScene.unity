@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 947624616}
   - component: {fileID: 947624615}
   - component: {fileID: 947624614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1194,6 +1194,9 @@ MonoBehaviour:
   _plantsGrownSO: {fileID: 11400000, guid: 8330bd27688f67f46b628886d562f367, type: 2}
   _plantsToGrowthText: {fileID: 557450292}
   _plantsToGrowth: 8
+  _raycastMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1664775912
 Transform:
   m_ObjectHideFlags: 0

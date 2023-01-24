@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+
+[RequireComponent(typeof(NavMeshAgent))]
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform _gardener;
@@ -19,6 +22,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _plantsToGrowthText;
     [SerializeField] private int _plantsToGrowth = 7;
     private int _plantsGrown;
+    [Space(20)]
+    [SerializeField] private LayerMask _raycastMask;
+
+
 
     private List<Vector3> _destinationsList; 
 
@@ -76,7 +83,7 @@ public class GameManager : MonoBehaviour
     private void AddDestination()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, _raycastMask))
         {
             _destinationsList.Add(hit.point);
             Debug.Log("Destination ajoutée à la liste : " + hit.point);

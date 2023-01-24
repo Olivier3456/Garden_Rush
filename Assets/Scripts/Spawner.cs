@@ -38,7 +38,6 @@ public class Spawner : MonoBehaviour
     }
 
 
-
     private void SpawnObject()
     {
         

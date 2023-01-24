@@ -16,8 +16,6 @@ public class Plant : MonoBehaviour
 
     void Update()
     {
-        _timer += Time.deltaTime;
-
         if (isGrown && transform.localScale.y < maxSize)
         {
             transform.localScale = new Vector3(transform.localScale.x,
@@ -29,6 +27,7 @@ public class Plant : MonoBehaviour
                                              transform.position.z);
         }
 
+        _timer += Time.deltaTime;
         if (_timer >= 15f && !isGrown) gameObject.SetActive(false);
     }
 
