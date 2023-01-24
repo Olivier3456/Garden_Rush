@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
         _plantsGrownSO.Value = 0;
         _plantsGrown = 0;
+
+        _plantsToGrowthText.text = _plantsGrown + " plant(s) / " + _plantsToGrowth;
     }
 
 

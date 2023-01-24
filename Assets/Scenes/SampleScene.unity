@@ -1193,7 +1193,7 @@ MonoBehaviour:
   _water: 50
   _plantsGrownSO: {fileID: 11400000, guid: 8330bd27688f67f46b628886d562f367, type: 2}
   _plantsToGrowthText: {fileID: 557450292}
-  _plantsToGrowth: 7
+  _plantsToGrowth: 8
 --- !u!4 &1664775912
 Transform:
   m_ObjectHideFlags: 0
