@@ -112,3 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: 10
   growthSpeed: 4
+  _water: {fileID: 11400000, guid: d06b1066c66105a429dfb9317cf5bc69, type: 2}

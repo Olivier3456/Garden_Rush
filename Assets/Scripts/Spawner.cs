@@ -50,8 +50,7 @@ public class Spawner : MonoBehaviour
         
         while (!NavMesh.SamplePosition(position, out hit, 1.0f, NavMesh.AllAreas))
         {
-            position = new Vector3(Random.Range(_xMin, _xMax), _ground.transform.position.y + 0.5f, Random.Range(_zMin, _zMax));
-            Debug.Log("La nouvelle position pour la plante n'est pas sur le nav mesh. Calcul d'une nouvelle position.");
+            position = new Vector3(Random.Range(_xMin, _xMax), _ground.transform.position.y + 0.5f, Random.Range(_zMin, _zMax));           
         }     
             return position;       
     }

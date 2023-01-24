@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform _gardener;
     private NavMeshAgent _gardenerAgent;
+    [Space(20)]
+    [SerializeField] IntVariable _waterScriptableObject;  // Game Manager ne récupère ce ScriptableGameObject que pour initialiser sa valeur.
+    [SerializeField] private int _water;
 
     private List<Vector3> _destinationsList; 
 
@@ -15,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         _gardenerAgent = _gardener.GetComponent<NavMeshAgent>();
         _destinationsList = new List<Vector3>();
+        _waterScriptableObject.Value = 50;
     }
 
 
@@ -24,6 +28,7 @@ public class GameManager : MonoBehaviour
 
         if (Vector3.Distance(_gardener.position, _gardenerAgent.destination) < 2f && _destinationsList.Count > 0) GoToNextDestination();       
     }
+
 
     private void GoToNextDestination()
     {
