@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabToSpawn;
-
-    private GameObject _ground;
-
     [SerializeField] float _spawnRate;
-
-
+    [Space(20)]
     [SerializeField] float _xMin;
     [SerializeField] float _xMax;
+    [Space(10)]
     [SerializeField] float _zMin;
     [SerializeField] float _zMax;
 
+    private GameObject _ground;
     private float _timer;
 
     void Start()
@@ -39,12 +39,21 @@ public class Spawner : MonoBehaviour
 
     private void SpawnObject()
     {
+        
         Instantiate(_prefabToSpawn, RandomPosition(), Quaternion.identity);
     }
 
     private Vector3 RandomPosition()
     {
-        return new Vector3(Random.Range(_xMin, _xMax), _ground.transform.position.y + 0.5f, Random.Range(_zMin, _zMax));
+        NavMeshHit hit;
+        Vector3 position = new Vector3(-404,-404, -404);
+        
+        while (!NavMesh.SamplePosition(position, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            position = new Vector3(Random.Range(_xMin, _xMax), _ground.transform.position.y + 0.5f, Random.Range(_zMin, _zMax));
+            Debug.Log("La nouvelle position pour la plante n'est pas sur le nav mesh. Calcul d'une nouvelle position.");
+        }     
+            return position;       
     }
 
 }
